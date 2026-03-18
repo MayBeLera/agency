@@ -21,12 +21,19 @@ function burgerInit(e) {
 
 // --------------feedback-slider
 const swiper = new Swiper('.feedback__slider', {
-    spaceBetween: 10,
-    slidesPerView: 3, 
+    slidesPerView: 1, 
     // centeredSlides: true, 
         // slidesOffsetBefore: 1,
         // initialSlide: 0,
     loop: true,
+    breakpoints: {
+    601:{
+      slidesPerView: 3,
+      spaceBetween: 10,
+      // centeredSlides: false, 
+    }
+
+  }
 });
 
 

@@ -30,6 +30,16 @@ const swiper = new Swiper('.feedback__slider', {
 });
 
 
+// --------------feedback-slider
+new Swiper('.about__slider', {
+    spaceBetween: 10,
+    slidesPerView: 3, 
+    // centeredSlides: true, 
+        // slidesOffsetBefore: 1,
+        // initialSlide: 0,
+    loop: true,
+});
+
 // --------------accordion-faq
 const accordionLists = document.querySelectorAll('.accordion-list');
 
@@ -70,3 +80,23 @@ document.addEventListener('DOMContentLoaded', function() {
     Inputmask("+7 (999) 999-99-99").mask('input[type="tel"]');
   }
 });
+
+
+// --------------file
+const fileInput = document.getElementById('file__input');
+const fileName = document.getElementById('file__name');
+// const btnDelete = document.querySelector('.btn-delete')
+
+fileInput.addEventListener('change', function() {
+    const file = fileInput.files[0]; 
+      if (file) {
+            fileName.textContent =  file.name;
+        } else {
+            fileName.textContent = 'Файл не выбран';
+        }
+});
+
+// btnDelete.addEventListener('click', function(){
+//       fileInput.value = '';
+//       fileName.textContent = 'Файл не выбран';
+// })

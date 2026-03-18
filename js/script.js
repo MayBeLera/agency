@@ -37,6 +37,149 @@ const swiper = new Swiper('.feedback__slider', {
 });
 
 
+class RunningLine {
+    constructor(containerId, options = {}) {
+        this.container = document.getElementById(containerId);
+        this.phrases = options.phrases || [];
+        this.speed = options.speed || 30;
+        // this.backgroundColor = options.backgroundColor || 'rgb(248, 107, 53)';
+        this.textColor = options.textColor || 'white';
+        
+        this.init();
+    }
+
+    init() {
+        this.container.parentElement.style.backgroundColor = this.backgroundColor;
+        this.container.parentElement.style.color = this.textColor;
+        
+        this.createLine();
+        this.startAnimation();
+        
+        new ResizeObserver(() => this.startAnimation()).observe(this.container);
+    }
+
+    createLine() {
+        this.container.innerHTML = '';
+        
+        // Создаем достаточно копий для заполнения экрана
+        const createItem = () => {
+            const item = document.createElement('div');
+            item.className = 'running-line__item';
+            
+            this.phrases.forEach((phrase) => {
+                const text = document.createElement('div');
+                text.className = 'running-line__text';
+                text.textContent = phrase;
+                item.appendChild(text);
+            });
+            return item;
+        };
+
+        const firstItem = createItem();
+        this.container.appendChild(firstItem);
+        
+        // Дублируем пока не заполним минимум 2 ширины экрана
+        const containerWidth = window.innerWidth;
+        let itemsWidth = firstItem.offsetWidth;
+        
+        while (itemsWidth < containerWidth * 2) {
+            this.container.appendChild(createItem());
+            itemsWidth += firstItem.offsetWidth;
+        }
+    }
+
+    startAnimation() {
+        if (this.animationFrame) {
+            cancelAnimationFrame(this.animationFrame);
+        }
+        
+        const items = this.container.children;
+        if (!items.length) return;
+        
+        const itemWidth = items[0].offsetWidth;
+        const gap = parseInt(getComputedStyle(items[0]).marginRight) || 0;
+        const totalWidth = (itemWidth + gap) * items.length;
+        
+        let offset = 0;
+        const step = this.speed / 60; // 60fps
+        
+        const animate = () => {
+            offset -= step;
+            
+            // Сброс позиции для бесконечной анимации
+            if (Math.abs(offset) >= totalWidth / items.length) {
+                offset = 0;
+                // Переставляем первый элемент в конец
+                this.container.appendChild(this.container.firstElementChild);
+            }
+            
+            this.container.style.transform = `translateX(${offset}px)`;
+            this.animationFrame = requestAnimationFrame(animate);
+        };
+        
+        this.animationFrame = requestAnimationFrame(animate);
+    }
+
+    destroy() {
+        if (this.animationFrame) {
+            cancelAnimationFrame(this.animationFrame);
+        }
+    }
+}
+
+// Создаем три строки с разными настройками
+document.addEventListener('DOMContentLoaded', () => {
+    const lines = [
+        {
+            id: 'runningLine1',
+            options: {
+                phrases: [
+                    "#фотосессия   ",
+                    "видеосъемка"
+                ],
+                speed: 4,
+                // backgroundColor: '#f86b35'
+            }
+        },
+        {
+            id: 'runningLine2',
+            options: {
+                phrases: [
+                    "продвижение   ",
+                    "#медицинскиое"
+                ],
+                speed: 3.8,
+                // backgroundColor: '#2c3e50'
+            }
+        },
+        {
+            id: 'runningLine3',
+            options: {
+                phrases: [
+                    "#корпоративняндекс  ",
+                    "карты",
+                    "#сайты"
+                ],
+                speed: 4.2,
+                // backgroundColor: '#27ae60'
+            }
+        }
+    ];
+
+    const runningLines = lines.map(line => new RunningLine(line.id, line.options));
+    
+    // Очистка при уходе со страницы
+    window.addEventListener('beforeunload', () => {
+        runningLines.forEach(line => line.destroy());
+    });
+});
+
+
+
+
+
+
+
 // --------------feedback-slider
 new Swiper('.about__slider', {
     slidesPerView: 1, 

@@ -598,6 +598,7 @@ body {
 }
 .about__slider {
   position: relative;
+  margin-bottom: 20px;
 }
 .about-wrapper {
 }
@@ -651,104 +652,51 @@ body {
 .about-button-next:hover svg path {
   fill: var(--accent-blue);
 }
-/* .marquee-container {
-            width: 100%;
-            overflow: hidden;
+.about-bottom__desc{
+  color: var(--grey);
+  max-width: 495px;
+}
 
 
-            padding: 30px 0;
-            position: relative;
-
-        }
-
-        .marquee-container::before,
-        .marquee-container::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 150px;
-            z-index: 2;
-            pointer-events: none;
-        }
-
-        .marquee-container::before {
-            left: 0;
-            background: linear-gradient(to right, #667eea, transparent);
-        }
-
-        .marquee-container::after {
-            right: 0;
-            background: linear-gradient(to left, #764ba2, transparent);
-        }
-
-
-        .marquee-track {
-            display: inline-block;
-            white-space: nowrap;
-            animation: scroll 20s linear infinite;
-        }
-
-
-        .marquee-text {
-            display: inline-block;
-            font-size: 64px;
-            font-weight: 800;
-            color: white;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-            padding-right: 50px; 
-        }
-
-
-        .hashtag {
-            color: #FFD700;
-            font-weight: 900;
-            display: inline-block;
-            margin: 0 10px;
-            animation: glow 2s infinite alternate;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-        }
-
-
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
+.running-lines {
+    display: flex;
+    flex-direction: column;
+}
+.running-line {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+.running-line__wrapper {
+    display: flex;
+    width: fit-content;
+}
+.running-line__item {
+    display: flex;
+    align-items: center;
+    /* padding: 12px 0; */
+}
+.running-line__text {
+    font-size: 120px;
+    text-transform: uppercase;
+    font-weight: bold;
+    /* font-weight: 500; */
+    margin: 0 20px;
+    color: #D9D9D9;
+    white-space: nowrap;
+    
+}
+.running-line:nth-child(2) .running-line__text{
+  opacity: .1;
+}
+.running-line:nth-child(1) .running-line__text,
+.running-line:nth-child(3) .running-line__text{
+  -webkit-text-stroke: 2px #2b2b2b;
+  color: transparent;
+}
 
 
 
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-                opacity: 0.7;
-            }
-            50% {
-                transform: scale(1.2);
-                opacity: 1;
-            }
-        }
-
-
-        @media (max-width: 768px) {
-            .marquee-text {
-                font-size: 40px;
-            }
-            
-            .separator {
-                width: 12px;
-                height: 12px;
-                margin: 0 15px;
-            }
-            
-            .marquee-container::before,
-            .marquee-container::after {
-                width: 50px;
-            }
-        } */
 /* ---------------------------------------------------------------------------- */
 .feedback-slide {
   display: flex;
@@ -1237,6 +1185,9 @@ body {
     flex-direction: column-reverse;
     align-items: center;
   }
+  .running-line__text{
+    font-size: 70px;
+  }
   /* ---------------------------------------------------------------------------- */
   .application {
     padding: 50px 0;
@@ -1300,6 +1251,10 @@ body {
   .title {
     font-size: 26px;
   }
+  .application__title {
+    line-height: 35px;
+        margin-bottom: 20px;
+}
   /* ---------------------------------------------------------------------------- */
   .collaboration .services-card__item:first-child {
     height: auto;
@@ -1366,9 +1321,14 @@ body {
     line-height: 50px;
     font-weight: bold;
   }
-
+ .running-line__text{
+    font-size: 45px;
+  }
   /* ---------------------------------------------------------------------------- */
   .mobile__contacts {
     flex-direction: column;
   }
+  .application-form__btn {
+    flex-direction: column;
+}
 }

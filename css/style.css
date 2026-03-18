@@ -592,31 +592,19 @@ body {
 .about__title {
   margin-bottom: 35px;
 }
-
 .about__desc {
   font-size: 20px;
   color: var(--grey);
 }
-
-.swiper {
-}
 .about__slider {
   position: relative;
 }
-.swiper-wrapper {
-}
 .about-wrapper {
-}
-.swiper-slide {
 }
 .about-slide {
   font-size: 20px;
 }
-.about-slide__img{
-  
-}
 .about-slide__img img{
-  
   max-width: 390px;
   width: 100%;
   max-height: 390px;
@@ -637,8 +625,8 @@ body {
 }
 .about-slider__arrows {
    position: absolute;
-    top: 40%; /* Опускаем на 50% от верхнего края */
-    transform: translateY(-40%); /* Поднимаем на половину своей высоты для точного центрирования */
+    top: 40%; 
+    transform: translateY(-40%); 
     left: 0;
     width: 100%;
     display: flex;
@@ -1231,6 +1219,13 @@ body {
   .hero__btns {
     justify-content: center;
   }
+  /* ---------------------------------------------------------------------------- */
+  .process__item {
+  padding: 50px 30px;
+}
+.process__item-title {
+  font-size: 40px;
+}
     /* ---------------------------------------------------------------------------- */
   .about__container {
     flex-direction: column-reverse;
@@ -1288,6 +1283,16 @@ body {
   .title {
     font-size: 26px;
   }
+    /* ---------------------------------------------------------------------------- */
+  .process__item {
+  padding: 30px;
+}
+.process__item-title {
+  font-weight: bold;
+  font-size: 28px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
   /* ---------------------------------------------------------------------------- */
   .about-slide {
   display: flex;

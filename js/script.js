@@ -32,12 +32,27 @@ const swiper = new Swiper('.feedback__slider', {
 
 // --------------feedback-slider
 new Swiper('.about__slider', {
-    spaceBetween: 10,
-    slidesPerView: 3, 
-    // centeredSlides: true, 
+    slidesPerView: 1, 
+    centeredSlides: true, 
+    // 
         // slidesOffsetBefore: 1,
         // initialSlide: 0,
     loop: true,
+    navigation: {
+      nextEl: '.about-button-next',
+      prevEl: '.about-button-prev',
+    },
+    breakpoints: {
+    601:{
+      slidesPerView: 2,
+      spaceBetween: 20,
+      centeredSlides: false, 
+    },
+    801:{
+      slidesPerView: 3,
+      spaceBetween: 10,
+    }
+  }
 });
 
 // --------------accordion-faq

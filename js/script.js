@@ -35,7 +35,16 @@ const swiper = new Swiper('.feedback__slider', {
 
   }
 });
-
+// --------------portfolio-slider
+new Swiper('.portfolio__slider', {
+  
+    slidesPerView: 1, 
+    loop: true,
+    navigation: {
+        nextEl: '.portfolio-button-next',
+        prevEl: '.portfolio-button-prev',
+    }
+});
 
 class RunningLine {
     constructor(containerId, options = {}) {
@@ -129,16 +138,15 @@ class RunningLine {
 
 // Создаем три строки с разными настройками
 document.addEventListener('DOMContentLoaded', () => {
-    const lines = [
-        {
-            id: 'runningLine1',
-            options: {
-                phrases: [
+  const lines = [
+    {
+      id: 'runningLine1',
+      options: {
+      phrases: [
                     "#фотосессия   ",
                     "видеосъемка"
                 ],
                 speed: 4,
-                // backgroundColor: '#f86b35'
             }
         },
         {
@@ -148,8 +156,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     "продвижение   ",
                     "#медицинскиое"
                 ],
-                speed: 3.8,
-                // backgroundColor: '#2c3e50'
             }
         },
         {
@@ -204,6 +210,7 @@ new Swiper('.about__slider', {
     }
   }
 });
+
 
 // --------------accordion-faq
 const accordionLists = document.querySelectorAll('.accordion-list');

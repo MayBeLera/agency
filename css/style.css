@@ -233,6 +233,33 @@ body {
 .mobile__btn {
   display: none;
 }
+
+
+
+
+.cursor {
+    display: inline-block;
+    width: 1px; /* Толщина курсора */
+    margin-left: 2px;
+    animation: blink 1s infinite; /* Анимация мигания */
+}
+
+/* Сама анимация мигания */
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* Чтобы текст не прыгал при изменении, можно задать min-width */
+.typed-part {
+    display: inline;
+    /* white-space: nowrap; - если слова разной длины, лучше убрать, либо задавать ширину через JS */
+    text-align: left;
+    font-weight: 300 !important;
+}
+
+
+
 /* ---------------------------------------------------------------------------- */
 .hero {
   margin-top: 90px;

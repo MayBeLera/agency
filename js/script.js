@@ -15,7 +15,40 @@ function burgerInit(e) {
     }
 }
 
+const output = document.getElementById('typed-output');
+const words = ['управление брендом и репутацией клиники', ];
+let i = 0; // индекс буквы
+let wordIndex = 0; // индекс слова
+let isDeleting = false;
 
+function typeEffect() {
+    let currentWord = words[wordIndex];
+    
+    if (isDeleting) {
+        // Удаляем по одной букве
+        output.textContent = currentWord.substring(0, i-1);
+        i--;
+    } else {
+        // Печатаем по одной букве
+        output.textContent = currentWord.substring(0, i+1);
+        i++;
+    }
+
+    // Логика переключения режима
+    if (!isDeleting && i === currentWord.length) {
+        isDeleting = true; // Начинаем стирать
+        setTimeout(typeEffect, 1000); // Пауза перед стиранием
+    } else if (isDeleting && i === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length; // Следующее слово
+        setTimeout(typeEffect, 200);
+    } else {
+        setTimeout(typeEffect, 200); // Скорость печати
+    }
+}
+
+// Запуск
+typeEffect();
 
 
 // --------------feedback-slider

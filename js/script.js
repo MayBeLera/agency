@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     "#фотосессия   ",
                     "видеосъемка"
                 ],
-                speed: 4,
+                speed: 14,
             }
         },
         {
@@ -154,8 +154,9 @@ document.addEventListener('DOMContentLoaded', () => {
             options: {
                 phrases: [
                     "продвижение   ",
-                    "#медицинскиое"
+                    "#медицинское"
                 ],
+                speed: 10,
             }
         },
         {
@@ -166,10 +167,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     "карты",
                     "#сайты"
                 ],
-                speed: 4.2,
+                speed: 20.2,
                 // backgroundColor: '#27ae60'
             }
-        }
+        },
     ];
 
     const runningLines = lines.map(line => new RunningLine(line.id, line.options));

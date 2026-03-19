@@ -16,7 +16,7 @@ function burgerInit(e) {
 }
 
 const output = document.getElementById('typed-output');
-const words = ['управление брендом и репутацией клиники', ];
+const words = ['управление брендом\nи репутацией \nклиники', 'помогаем врачам выстроить доверие'];
 let i = 0; // индекс буквы
 let wordIndex = 0; // индекс слова
 let isDeleting = false;

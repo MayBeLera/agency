@@ -234,31 +234,33 @@ body {
   display: none;
 }
 
-
-
-
 .cursor {
-    display: inline-block;
-    width: 1px; /* Толщина курсора */
-    margin-left: 2px;
-    animation: blink 1s infinite; /* Анимация мигания */
+  display: inline-block;
+  width: 1px; /* Толщина курсора */
+  margin-left: 2px;
+  animation: blink 1s infinite; /* Анимация мигания */
 }
 
 /* Сама анимация мигания */
 @keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
 
 /* Чтобы текст не прыгал при изменении, можно задать min-width */
 .typed-part {
-    display: inline;
-    /* white-space: nowrap; - если слова разной длины, лучше убрать, либо задавать ширину через JS */
-    text-align: left;
-    font-weight: 300 !important;
+  display: inline;
+  /* white-space: nowrap; - если слова разной длины, лучше убрать, либо задавать ширину через JS */
+  text-align: left;
+  font-weight: 300 !important;
+  white-space: pre-wrap;
 }
-
-
 
 /* ---------------------------------------------------------------------------- */
 .hero {
@@ -308,7 +310,7 @@ body {
   font-weight: bold;
   text-transform: uppercase;
 }
-.hero__btn:first-child:hover{
+.hero__btn:first-child:hover {
   border: none;
   transition: all 0.3s;
   outline: 1px solid transparent;
@@ -576,16 +578,16 @@ body {
   color: var(--grey);
 }
 /* ---------------------------------------------------------------------------- */
-.portfolio{
+.portfolio {
   position: relative;
 }
-.portfolio-decor-top{
+.portfolio-decor-top {
   position: absolute;
   top: -20%;
   right: -35%;
   z-index: -1;
 }
-.portfolio-decor-bottom{
+.portfolio-decor-bottom {
   position: absolute;
   left: -60%;
   bottom: -40%;
@@ -668,19 +670,19 @@ body {
   gap: 15px;
   font-weight: bold;
 }
-.portfolio__case img{
+.portfolio__case img {
   width: 100%;
   border-radius: 10px;
 }
-.portfolio__case .portfolio-slide__link p{
+.portfolio__case .portfolio-slide__link p {
   padding: 10px 0;
   font-size: 24px;
 }
-.portfolio__case:last-child{
+.portfolio__case:last-child {
   font-size: 20px;
   line-height: 22px;
   width: 100%;
-  border: 1px solid rgb(249, 249, 249, .2);
+  border: 1px solid rgb(249, 249, 249, 0.2);
   border-radius: 10px;
   flex: 1;
   justify-content: end;
@@ -730,15 +732,15 @@ body {
   top: 0;
   right: 0;
 }
-.about__decor-bottom{
+.about__decor-bottom {
   position: absolute;
   left: 0;
   bottom: 40%;
   z-index: -1;
 }
-.lines-decor{
+.lines-decor {
   position: absolute;
-  bottom:-55%;
+  bottom: -55%;
   left: 0;
 }
 .about__inner {
@@ -904,7 +906,7 @@ body {
 }
 
 /* ---------------------------------------------------------------------------- */
-.feedback__slider{
+.feedback__slider {
   padding-bottom: 30px;
 }
 .feedback-slide {
@@ -930,18 +932,18 @@ body {
   font-size: 14px;
   color: var(--grey);
 }
- .swiper-scrollbar{
+.swiper-scrollbar {
   background: rgba(140, 140, 140, 0.326);
   /* max-width: 50%; */
   position: static;
-    width: 50%;
-    height: 7px;
-    margin: 0 auto;
+  width: 50%;
+  height: 7px;
+  margin: 0 auto;
 }
-.feedback-scrollbar .swiper-scrollbar-drag{
+.feedback-scrollbar .swiper-scrollbar-drag {
   /* max-width: 20%; */
   background: linear-gradient(45deg, var(--accent-blue), var(--accent-purple));
-  opacity: .5;
+  opacity: 0.5;
 }
 /* ---------------------------------------------------------------------------- */
 .faq__body {
@@ -1403,15 +1405,15 @@ body {
     font-size: 40px;
   }
   /* ---------------------------------------------------------------------------- */
-  .portfolio__column:first-child{
+  .portfolio__column:first-child {
     max-width: none;
     margin-top: 0px;
     flex: 0;
-}
-.portfolio__container{
+  }
+  .portfolio__container {
     gap: 30px;
     flex-direction: column;
-}
+  }
   /* ---------------------------------------------------------------------------- */
   .about__container {
     flex-direction: column-reverse;
@@ -1471,7 +1473,7 @@ body {
   }
 }
 @media (max-width: 700px) {
-  .portfolio__cases{
+  .portfolio__cases {
     flex-wrap: wrap;
     justify-content: center;
   }

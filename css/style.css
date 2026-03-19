@@ -556,12 +556,12 @@ body {
   position: absolute;
   top: -20%;
   right: -35%;
+  z-index: -1;
 }
 .portfolio-decor-bottom{
   position: absolute;
   left: -60%;
   bottom: -40%;
-
 }
 .portfolio__container {
   display: flex;

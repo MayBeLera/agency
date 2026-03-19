@@ -35,7 +35,6 @@ const swiper = new Swiper('.feedback__slider', {
       spaceBetween: 10,
       // centeredSlides: false, 
     }
-
   }
 });
 // --------------portfolio-slider

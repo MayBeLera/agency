@@ -2,8 +2,7 @@ document.addEventListener('click', burgerInit);
 
 function burgerInit(e) {
     const burgerIcon = e.target.closest('.burger-icon');
-    const burgerNavLink = e.target.closest('.nav-link');
-    // const headerButtons = document.querySelector('.header__btns')
+    const burgerNavLink = e.target.closest('.nav__link');
 
     if(!burgerIcon && !burgerNavLink) return
     if(document.documentElement.clientWidth > 1000) return
@@ -25,7 +24,11 @@ const swiper = new Swiper('.feedback__slider', {
     // centeredSlides: true, 
         // slidesOffsetBefore: 1,
         // initialSlide: 0,
-    loop: true,
+    loop: false,
+    scrollbar: {
+            el: '.swiper-scrollbar',
+            draggable: true,
+        },
     breakpoints: {
     601:{
       slidesPerView: 3,
@@ -43,7 +46,8 @@ new Swiper('.portfolio__slider', {
     navigation: {
         nextEl: '.portfolio-button-next',
         prevEl: '.portfolio-button-prev',
-    }
+    },
+    
 });
 
 class RunningLine {
@@ -168,14 +172,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     "#сайты"
                 ],
                 speed: 20.2,
-                // backgroundColor: '#27ae60'
             }
         },
     ];
 
     const runningLines = lines.map(line => new RunningLine(line.id, line.options));
     
-    // Очистка при уходе со страницы
     window.addEventListener('beforeunload', () => {
         runningLines.forEach(line => line.destroy());
     });
@@ -199,6 +201,7 @@ new Swiper('.about__slider', {
       nextEl: '.about-button-next',
       prevEl: '.about-button-prev',
     },
+    
     breakpoints: {
     601:{
       slidesPerView: 2,

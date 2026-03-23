@@ -17,46 +17,39 @@ function burgerInit(e) {
 
 const output = document.getElementById('typed-output');
 const words = ['управление брендом\nи репутацией \nклиники', 'помогаем врачам выстроить доверие'];
-let i = 0; // индекс буквы
-let wordIndex = 0; // индекс слова
+let i = 0; 
+let wordIndex = 0;
 let isDeleting = false;
 
 function typeEffect() {
     let currentWord = words[wordIndex];
     
     if (isDeleting) {
-        // Удаляем по одной букве
         output.textContent = currentWord.substring(0, i-1);
         i--;
     } else {
-        // Печатаем по одной букве
         output.textContent = currentWord.substring(0, i+1);
         i++;
     }
 
-    // Логика переключения режима
     if (!isDeleting && i === currentWord.length) {
-        isDeleting = true; // Начинаем стирать
-        setTimeout(typeEffect, 1000); // Пауза перед стиранием
+        isDeleting = true; 
+        setTimeout(typeEffect, 1000); 
     } else if (isDeleting && i === 0) {
         isDeleting = false;
-        wordIndex = (wordIndex + 1) % words.length; // Следующее слово
+        wordIndex = (wordIndex + 1) % words.length; 
         setTimeout(typeEffect, 200);
     } else {
-        setTimeout(typeEffect, 200); // Скорость печати
+        setTimeout(typeEffect, 200); 
     }
 }
 
-// Запуск
 typeEffect();
 
 
 // --------------feedback-slider
 const swiper = new Swiper('.feedback__slider', {
     slidesPerView: 1, 
-    // centeredSlides: true, 
-        // slidesOffsetBefore: 1,
-        // initialSlide: 0,
     loop: false,
     scrollbar: {
             el: '.swiper-scrollbar',
@@ -66,10 +59,11 @@ const swiper = new Swiper('.feedback__slider', {
     601:{
       slidesPerView: 3,
       spaceBetween: 10,
-      // centeredSlides: false, 
     }
   }
 });
+
+
 // --------------portfolio-slider
 new Swiper('.portfolio__slider', {
   
@@ -87,7 +81,6 @@ class RunningLine {
         this.container = document.getElementById(containerId);
         this.phrases = options.phrases || [];
         this.speed = options.speed || 30;
-        // this.backgroundColor = options.backgroundColor || 'rgb(248, 107, 53)';
         this.textColor = options.textColor || 'white';
         
         this.init();
@@ -106,7 +99,6 @@ class RunningLine {
     createLine() {
         this.container.innerHTML = '';
         
-        // Создаем достаточно копий для заполнения экрана
         const createItem = () => {
             const item = document.createElement('div');
             item.className = 'running-line__item';
@@ -123,7 +115,6 @@ class RunningLine {
         const firstItem = createItem();
         this.container.appendChild(firstItem);
         
-        // Дублируем пока не заполним минимум 2 ширины экрана
         const containerWidth = window.innerWidth;
         let itemsWidth = firstItem.offsetWidth;
         
@@ -146,15 +137,13 @@ class RunningLine {
         const totalWidth = (itemWidth + gap) * items.length;
         
         let offset = 0;
-        const step = this.speed / 60; // 60fps
+        const step = this.speed / 60; 
         
         const animate = () => {
             offset -= step;
             
-            // Сброс позиции для бесконечной анимации
             if (Math.abs(offset) >= totalWidth / items.length) {
                 offset = 0;
-                // Переставляем первый элемент в конец
                 this.container.appendChild(this.container.firstElementChild);
             }
             
@@ -172,7 +161,6 @@ class RunningLine {
     }
 }
 
-// Создаем три строки с разными настройками
 document.addEventListener('DOMContentLoaded', () => {
   const lines = [
     {
@@ -225,9 +213,6 @@ document.addEventListener('DOMContentLoaded', () => {
 new Swiper('.about__slider', {
     slidesPerView: 1, 
     centeredSlides: true, 
-    // 
-        // slidesOffsetBefore: 1,
-        // initialSlide: 0,
     loop: true,
     navigation: {
       nextEl: '.about-button-next',
@@ -293,7 +278,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // --------------file
 const fileInput = document.getElementById('file__input');
 const fileName = document.getElementById('file__name');
-// const btnDelete = document.querySelector('.btn-delete')
+
 
 fileInput.addEventListener('change', function() {
     const file = fileInput.files[0]; 
@@ -304,7 +289,3 @@ fileInput.addEventListener('change', function() {
         }
 });
 
-// btnDelete.addEventListener('click', function(){
-//       fileInput.value = '';
-//       fileName.textContent = 'Файл не выбран';
-// })

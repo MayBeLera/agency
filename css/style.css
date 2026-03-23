@@ -82,7 +82,7 @@ body {
   line-height: 24px;
   transition: all 0.3s;
 
-  background: linear-gradient(45deg, var(--accent-blue), var(--accent-purple));
+  background: linear-gradient( #3A8E84 0%,  #6DCCC4 99%);
   background-size: 200% 100%;
   background-position: -100% 0;
   -webkit-background-clip: text;
@@ -104,7 +104,7 @@ body {
 .header__mail {
   font-size: 18px;
   transition: all 0.3s;
-  background: linear-gradient(45deg, var(--accent-blue), var(--accent-purple));
+  background: linear-gradient( #3A8E84 0%,  #6DCCC4 99%);
   background-size: 200% 100%;
   background-position: -100% 0;
   -webkit-background-clip: text;
@@ -147,7 +147,7 @@ body {
   bottom: 0;
   border-radius: 60px;
   border: 1px solid transparent;
-  background: linear-gradient(45deg, var(--accent-blue), var(--accent-purple))
+  background: linear-gradient( #3A8E84 0%,  #6DCCC4 99%)
     border-box;
   -webkit-mask:
     linear-gradient(#fff 0 0) padding-box,
@@ -170,7 +170,7 @@ body {
   right: 0;
   bottom: 0;
   border-radius: 60px;
-  background: linear-gradient(45deg, var(--accent-blue), var(--accent-purple));
+  background: linear-gradient( #3A8E84 0%,  #6DCCC4 99%);
   opacity: 0;
   transition: opacity 0.3s;
   z-index: -1;
@@ -196,7 +196,7 @@ body {
 .burger-icon span::before,
 .burger-icon span::after {
   display: block;
-  background: linear-gradient(45deg, var(--accent-blue), var(--accent-purple));
+  background: linear-gradient( #3A8E84 0%,  #6DCCC4 99%);
   width: 30px;
   height: 3px;
   border-radius: 100px;
@@ -234,33 +234,6 @@ body {
   display: none;
 }
 
-.cursor {
-  display: inline-block;
-  width: 1px; /* Толщина курсора */
-  margin-left: 2px;
-  animation: blink 1s infinite; /* Анимация мигания */
-}
-
-/* Сама анимация мигания */
-@keyframes blink {
-  0%,
-  50% {
-    opacity: 1;
-  }
-  51%,
-  100% {
-    opacity: 0;
-  }
-}
-
-/* Чтобы текст не прыгал при изменении, можно задать min-width */
-.typed-part {
-  display: inline;
-  /* white-space: nowrap; - если слова разной длины, лучше убрать, либо задавать ширину через JS */
-  text-align: left;
-  font-weight: 300 !important;
-  white-space: pre-wrap;
-}
 
 /* ---------------------------------------------------------------------------- */
 .hero {
@@ -278,9 +251,29 @@ body {
   margin-bottom: 30px;
   text-transform: uppercase;
 }
-.hero__title span {
-  font-weight: bold;
+.cursor {
+  display: inline-block;
+  width: 1px; 
+  margin-left: 2px;
+  animation: blink 1s infinite; 
 }
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+.typed-part {
+  display: inline;
+  text-align: left;
+  font-weight: 300 !important;
+  white-space: pre-wrap;
+}
+
 .hero__info-text {
   max-width: 650px;
   font-size: 20px;
@@ -302,7 +295,7 @@ body {
   gap: 15px;
 }
 .hero__btn:first-child {
-  background: linear-gradient(45deg, var(--accent-blue), var(--accent-purple));
+  background: linear-gradient( #3A8E84 0%,  #6DCCC4 99%);
   padding: 20px 38px;
   border-radius: 60px;
   font-size: 14px;
@@ -321,7 +314,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(45deg, var(--accent-blue), var(--accent-purple));
+  background: linear-gradient( #3A8E84 0%,  #6DCCC4 99%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -336,7 +329,7 @@ body {
   bottom: 0;
   border-radius: 60px;
   border: 1px solid transparent;
-  background: linear-gradient(45deg, var(--accent-blue), var(--accent-purple))
+  background: linear-gradient( #3A8E84 0%,  #6DCCC4 99%)
     border-box;
   -webkit-mask:
     linear-gradient(#fff 0 0) padding-box,
@@ -358,7 +351,7 @@ body {
   right: 0;
   bottom: 0;
   border-radius: 60px;
-  background: linear-gradient(45deg, var(--accent-blue), var(--accent-purple));
+  background: linear-gradient( #3A8E84 0%,  #6DCCC4 99%);
   opacity: 0;
   transition: opacity 0.3s;
   z-index: -1;
@@ -380,7 +373,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(45deg, var(--accent-blue), var(--accent-purple));
+  background: linear-gradient( #3A8E84 0%,  #6DCCC4 99%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -394,7 +387,7 @@ body {
   bottom: 0;
   border-radius: 60px;
   border: 1px solid transparent;
-  background: linear-gradient(45deg, var(--accent-blue), var(--accent-purple))
+  background: linear-gradient( #3A8E84 0%,  #6DCCC4 99%)
     border-box;
   -webkit-mask:
     linear-gradient(#fff 0 0) padding-box,
@@ -416,7 +409,7 @@ body {
   right: 0;
   bottom: 0;
   border-radius: 60px;
-  background: linear-gradient(45deg, var(--accent-blue), var(--accent-purple));
+  background: linear-gradient( #3A8E84 0%,  #6DCCC4 99%);
   opacity: 0;
   transition: opacity 0.3s;
   z-index: -1;
@@ -450,20 +443,21 @@ body {
 .section__count {
   display: flex;
   justify-content: space-between;
-  border-top: 2px solid #afafaf;
+  border-top: 2px solid #3A8E84;
   padding: 12px 0 15px;
   margin-bottom: 18px;
+  opacity: .2;
 }
 .section__number {
   font-size: 24px;
   font-weight: bold;
-  color: #afafaf;
+  color: #3A8E84;
 }
 .section__circle {
   width: 23px;
   height: 23px;
   border-radius: 100%;
-  border: 2px solid #afafaf;
+  border: 2px solid #3A8E84;
 }
 
 .subtitle {
@@ -479,7 +473,7 @@ body {
   margin-bottom: 45px;
 }
 .title span {
-  background: linear-gradient(45deg, var(--accent-blue), var(--accent-purple));
+  background: linear-gradient( #3A8E84 0%,  #6DCCC4 99%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -523,7 +517,7 @@ body {
   overflow: hidden;
 }
 .services-card__back {
-  background: linear-gradient(45deg, var(--accent-blue), var(--accent-purple));
+  background: linear-gradient( #3A8E84 0%,  #6DCCC4 99%);
   z-index: -1;
   transform: rotateY(180deg);
 }
@@ -537,7 +531,6 @@ body {
   font-size: 150px;
   line-height: 71%;
   -webkit-text-stroke: 2px #2b2b2b;
-  /* text-stroke: 2px rgba(204, 204, 204, 1); */
   color: transparent;
   position: absolute;
   top: 0;
@@ -569,7 +562,7 @@ body {
 }
 /* ---------------------------------------------------------------------------- */
 .collaboration {
-  background: url("../img/decor/footer-decor.png") no-repeat;
+  background: url("../img/decor/decor.png") no-repeat;
   background-size: 817.14px;
   background-position: 150% 0%;
 }
@@ -714,7 +707,7 @@ body {
   margin-bottom: 30px;
 }
 .process__item:last-child .process__item-title {
-  background: linear-gradient(45deg, var(--accent-blue), var(--accent-purple));
+  background: linear-gradient( #3A8E84 0%,  #6DCCC4 99%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
